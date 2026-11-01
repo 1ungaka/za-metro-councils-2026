@@ -6,7 +6,7 @@ forecast does not change.
 1. Check for polls published since the last update. Add any new ones to `data/external/polls.csv`,
    with their sample and source.
 2. Rerun everything: `make backtest forecast figures dashboard test`.
-3. Update the numbers in `docs/PAPER_DRAFT.md`, and remove its draft notice.
+3. Update the numbers in `docs/PAPER.md`, change its status line, and rebuild it with `make paper`.
 4. Refresh the dashboard from `reports/dashboard/`.
 5. Record the final choices in `docs/DECISIONS.md`.
 6. Commit, then tag: `git tag -a v1.0-forecast -m "Forecast frozen before polls open"`.

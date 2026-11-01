@@ -89,9 +89,11 @@ def party_label(party: str) -> str:
 def seat_ranges(parties: pd.DataFrame, folder: Path) -> None:
     """Show each party's seats as a share of the council, against the majority line."""
     base = parties[parties["scenario"] == "base"]
-    figure, axes = plt.subplots(1, 5, figsize=(11, 3.6), sharey=True, sharex=True)
+    figure, grid = plt.subplots(2, 3, figsize=(7.6, 4.6), sharey=True, sharex=True)
+    axes = grid.flatten()
+    axes[-1].set_visible(False)
     rows = list(reversed(PARTY_ORDER))
-    for axis, (metro, details) in zip(axes, METROS.items(), strict=True):
+    for axis, (metro, details) in zip(axes, METROS.items(), strict=False):
         table = base[base["metro"] == metro].set_index("party")
         scale = 100 / details["seats"]
         for row, party in enumerate(rows):
@@ -122,7 +124,9 @@ def seat_ranges(parties: pd.DataFrame, folder: Path) -> None:
         axis.set_xticks([0, 25, 50, 75])
         axis.grid(axis="y", visible=False)
         axis.spines["left"].set_visible(False)
-    axes[0].set_yticks(range(len(rows)), [party_label(party) for party in rows])
+    for axis in grid[:, 0]:
+        axis.set_yticks(range(len(rows)), [party_label(party) for party in rows])
+    grid[0, 2].tick_params(labelbottom=True)
     figure.supxlabel("Share of council seats (%)", fontsize=9, color=SECONDARY)
     figure.tight_layout()
     save(figure, "figure_1_seat_ranges", folder)

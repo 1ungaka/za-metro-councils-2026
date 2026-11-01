@@ -1,22 +1,23 @@
-# Who Can Govern? Hung-Council Probabilities for Five South African Metros in the 2026 Local Government Elections
+# Who Can Govern? Hung-Council Probabilities for the Gauteng and Eastern Cape Metros in South Africa's 2026 Local Government Elections
 
 Lunga Ngaka, University of Fort Hare
 
-**Status: draft. Forecast figures are working values and will be replaced when the forecast is
-frozen before polls open on 4 November 2026.**
+**Working paper, 2 November 2026. Forecast figures are provisional until the forecast is frozen
+before polls open on 4 November 2026.**
 
 ## Abstract
 
 South African metros are governed by councils whose seats follow a mixed electoral system, so
 small changes in votes can decide who is able to govern. This paper gives a timestamped probabilistic
-forecast for five metros in the 4 November 2026 Local Government Elections: Johannesburg, Tshwane,
-Ekurhuleni, Nelson Mandela Bay and Buffalo City. Vote shares are modelled as compositional data
+forecast for five metros in the 4 November 2026 Local Government Elections: Johannesburg, Tshwane
+and Ekurhuleni in Gauteng, and Nelson Mandela Bay and Buffalo City in the Eastern Cape. Vote shares are modelled as compositional data
 using a logistic-normal model that combines past results with published polls, and each of 200,000
 simulated elections is passed through the exact seat allocation rule. That rule reproduces all ten
 official seat calculations for these metros in 2016 and 2021. An outright majority is very unlikely
-in the four metros with published polls. The DA is favoured to be the largest party in Johannesburg
-and Tshwane, while Ekurhuleni and Nelson Mandela Bay are close to even. Buffalo City is the main
-uncertainty: the chance that the ANC loses its majority there is 27% under the base assumption and
+in all three Gauteng metros and in Nelson Mandela Bay. The DA is favoured to be the largest party in
+Johannesburg and Tshwane, while Ekurhuleni and Nelson Mandela Bay are close to even. In Gauteng, no
+two-party pairing other than ANC and DA is likely to reach a majority, so smaller parties decide
+what is possible. Buffalo City is the main uncertainty: the chance that the ANC loses its majority there is 27% under the base assumption and
 ranges from 18% to 47% across alternatives, because no poll figures are published for that metro.
 The forecast will be scored against the declared results using a plan fixed in advance.
 
@@ -115,8 +116,8 @@ where $s_j$ is the pooled spread between pollsters, $k_j$ is the effective numbe
 $c = 0.10$ allows for an error common to all pollsters that their spread cannot reveal. The value of
 $c$ is an assumption, and Section 7 varies it. The posterior for $\log$ share is normal with
 
-$$\text{precision} = \frac{1}{a_j^2} + \frac{1}{b_j^2}, \qquad
-\text{mean} = \frac{m_j / a_j^2 + p_j / b_j^2}{1 / a_j^2 + 1 / b_j^2}.$$
+$$\mathrm{precision} = \frac{1}{a_j^2} + \frac{1}{b_j^2}, \qquad
+\mathrm{mean} = \frac{m_j / a_j^2 + p_j / b_j^2}{1 / a_j^2 + 1 / b_j^2}.$$
 
 For the ANC in Johannesburg the polls receive 81% of the weight. The prior spread $a_j$ comes from
 the backtest: 0.25 for established parties, and 0.48 for new and smaller parties, the error of the
@@ -146,7 +147,13 @@ results.
 The blend beats both baselines, but modestly. Its largest errors are informative. The ANC was
 over-predicted by 9.6 points on average, as its 2021 fall was not captured by earlier results.
 ActionSA, a new party in 2021, was not predicted at all and won 16.2% in Johannesburg, which
-contributed to an error of 6.5 points there against 0.8 in Buffalo City.
+contributed to an error of 6.5 points there against 0.8 in Buffalo City. The Gauteng metros were
+harder to predict than the Eastern Cape metros, and the same may be true in 2026.
+
+![The 2021 backtest](../reports/figures/figure_4_backtest.png)
+
+*Figure 4. The 2021 backtest. Each dot is one party group in one metro, and points on the diagonal
+are perfect predictions.*
 
 Two limits apply. This is a single election, and the backtest cannot test the poll update, because
 this study has no 2021 metro polls.
@@ -173,24 +180,79 @@ this study has no 2021 metro polls.
 | Nelson Mandela Bay | 45 (38-52) | 45 (38-52) | 10 (7-14) | 2 (1-4) | 3 (2-4) |
 | Buffalo City | 55 (43-66) | 18 (12-26) | 13 (8-19) | 5 (2-10) | 4 (2-8) |
 
-Figure 1 shows seat ranges against the majority line, Figure 2 the chance of finishing largest,
-Figure 3 how polls move the forecast from fundamentals, and Figure 4 the backtest.
+![Seat ranges by party against the majority line](../reports/figures/figure_1_seat_ranges.png)
+
+*Figure 1. Median seats and 90% ranges as a share of each council. Only the ANC in Buffalo City
+reaches the majority line.*
+
+![Chance of finishing as the largest party](../reports/figures/figure_2_largest_party.png)
+
+*Figure 2. Chance of finishing as the single largest party, with exact ties shown separately.*
 
 The main result is that the hung-council question is effectively settled in four metros. In those
-four, the live questions are who finishes first and who can assemble a majority. Nelson Mandela Bay
-is close to a coin flip, with a 5% chance of an exact tie for largest party, as occurred in 2021.
+four, the live questions are who finishes first and who can assemble a majority.
 
-**Coalitions.** The only two-party pairing with a high chance of a majority in Johannesburg,
-Tshwane, Ekurhuleni and Nelson Mandela Bay is ANC and DA. Other routes need three parties: for
-example, DA, EFF and ActionSA reach a majority in Tshwane in 98% of simulations, DA, EFF and MK in
-Johannesburg in 92%, ANC, EFF and MK in Ekurhuleni in 86%, and ANC, EFF and PA in Nelson Mandela
-Bay in 52%. These are statements about arithmetic only and say nothing about who would agree to
-govern together.
+**Table 3. Vote share in 2021 and forecast for 2026 (percent)**
+
+| Metro | ANC 2021 | ANC 2026 | DA 2021 | DA 2026 |
+| --- | --- | --- | --- | --- |
+| Johannesburg | 33.8 | 24.6 | 26.3 | 31.5 |
+| Tshwane | 34.9 | 27.5 | 32.3 | 33.2 |
+| Ekurhuleni | 38.4 | 30.4 | 28.9 | 29.5 |
+| Nelson Mandela Bay | 39.6 | 37.3 | 40.1 | 37.2 |
+| Buffalo City | 60.8 | 54.8 | 20.0 | 17.6 |
+
+![How polls move the forecast from fundamentals](../reports/figures/figure_3_polls_and_fundamentals.png)
+
+*Figure 3. ANC and DA vote share from fundamentals, poll averages and the forecast. Buffalo City has
+no published poll, so its forecast borrows Nelson Mandela Bay's shift.*
+
+### 6.1 Gauteng
+
+Gauteng is where the forecast departs most from past results. Fundamentals alone would place the
+ANC at 32% to 36% in the three metros. Polls put it much lower, and the forecast falls between
+them, closer to the polls: 24.6% in Johannesburg, 27.5% in Tshwane and 30.4% in Ekurhuleni, which
+is 7 to 9 points below 2021.
+
+The three metros are not one story.
+
+**Johannesburg** is the most fragmented. The DA is favoured to finish first (95%), but its median
+of 85 seats is 51 short of a majority. MK has no local election history but is forecast at 32 seats
+because of its 2024 result and the polls. EFF and ActionSA add 29 and 24. Even a DA and ActionSA
+pairing has a median of only 109 seats out of the 136 needed. Three-party routes with the DA include
+DA, EFF and MK (92% of simulations), DA, MK and ActionSA (80%) and DA, EFF and ActionSA (68%). A
+majority led by the ANC without the DA is much harder: ANC, EFF and MK reach one in 18%.
+
+**Tshwane** gives the DA its largest share of seats in Gauteng, though Johannesburg has the higher
+chance of a DA first place, at 95% against 89%. The FF+ is strong here, with a median of 13 seats. ActionSA is the pivot. DA, EFF and ActionSA reach a majority in 98% of simulations, while
+ANC, EFF and ActionSA do so in 49%, and DA, FF+ and ActionSA in 47%.
+
+**Ekurhuleni** is the closest Gauteng race, with the ANC at 55% and the DA at 42% to finish first.
+MK's vote share is highest here, at 12.3%, with a median of 28 seats and a wide range of 17 to 44,
+and it appears in both of the leading three-party routes: ANC, EFF and MK (86%) and DA, EFF and MK (80%).
+
+Across all three, the only two-party pairing with a high chance of a majority is ANC and DA, above
+97% in each. Every other route needs at least three parties.
+
+### 6.2 Eastern Cape
+
+The Eastern Cape metros raise different questions. **Nelson Mandela Bay** is a two-party contest and
+close to a coin flip, with the ANC at 48%, the DA at 46%, and a 5% chance of an exact tie for largest
+party, as occurred in 2021. Both parties are forecast 2 to 3 points below 2021, and the other parties are
+small: EFF has a median of 10 seats and PA 5. Two-party routes other than ANC and DA exist but are
+unlikely, with ANC and EFF at 13% and DA and EFF at 11%. ANC, EFF and PA reach a majority in 52%.
+
+**Buffalo City** is the only metro where an outright majority remains likely. The ANC is forecast at
+55 seats of the 51 needed, with a 90% range of 43 to 66. Section 7 shows how much this depends on one
+assumption.
+
+These coalition figures are statements about arithmetic only and say nothing about who would agree
+to govern together.
 
 ## 7. Sensitivity
 
-The chance of no majority in the four polled metros stays above 92% in every variation, including
-fundamentals alone. Buffalo City is different.
+The chance of no majority in the three Gauteng metros and Nelson Mandela Bay stays above 92% in
+every variation, including fundamentals alone. Buffalo City is different.
 
 | Assumption for Buffalo City | Chance of no majority |
 | --- | --- |
