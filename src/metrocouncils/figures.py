@@ -76,8 +76,10 @@ def save(figure: plt.Figure, name: str, folder: Path) -> None:
 
 
 def probability_label(value: float) -> str:
-    """Format a probability, never rounding a near-certainty up to 100%."""
-    return ">99%" if value > 0.99 else f"{value * 100:.0f}%"
+    """Format a probability, never rounding a near-certainty to 100% or 0%."""
+    if value > 0.99:
+        return ">99%"
+    return "<1%" if value < 0.01 else f"{value * 100:.0f}%"
 
 
 def party_label(party: str) -> str:

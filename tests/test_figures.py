@@ -14,4 +14,5 @@ def test_figures_and_tables_are_written(tmp_path):
 
 def test_near_certainty_is_never_shown_as_100_percent():
     assert figures.probability_label(0.9994) == ">99%"
+    assert figures.probability_label(0.0) == "<1%"
     assert figures.probability_label(0.55) == "55%"

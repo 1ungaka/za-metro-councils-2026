@@ -55,7 +55,10 @@ def party_table(parties: pd.DataFrame) -> pd.DataFrame:
     base["party"] = base["party"].map(party_label)
     columns = ["metro", "party", "share_median", "share_low", "share_high"]
     columns += ["seats_median", "seats_low", "seats_high"]
-    return base[columns].round(1)
+    table = base[columns].round(1)
+    seats = ["seats_median", "seats_low", "seats_high"]
+    table[seats] = table[seats].round().astype(int)
+    return table
 
 
 def source_comparison(parties: pd.DataFrame, summary: dict) -> pd.DataFrame:
@@ -131,10 +134,19 @@ def validation_table() -> pd.DataFrame:
     return record[["council", "metro", "year", "result"]]
 
 
+def fieldwork_label(period: str) -> str:
+    """Turn 2026-08-25/09-17 into 25 Aug to 17 Sep."""
+    start, end = period.split("/")
+    first = pd.Timestamp(start)
+    last = pd.Timestamp(f"{first.year}-{end}")
+    return f"{first.day} {first:%b} to {last.day} {last:%b}"
+
+
 def poll_table() -> pd.DataFrame:
     polls = pd.read_csv(REPO_ROOT / "data" / "external" / "polls.csv")
     polls["metro"] = polls["metro"].map(lambda code: METROS[code]["name"])
     polls["poll"] = polls["metro"] + ", " + polls["pollster"]
+    polls["fieldwork"] = polls["fieldwork"].map(fieldwork_label)
     columns = ["poll", "metro", "pollster", "fieldwork", "sample", "voter_base"]
     return polls[[*columns, "ANC", "DA", "MK", "EFF", "ASA"]]
 
