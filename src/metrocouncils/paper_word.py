@@ -5,6 +5,7 @@ equations.
 """
 
 import re
+from datetime import UTC, datetime
 from pathlib import Path
 
 from docx import Document
@@ -325,6 +326,7 @@ def build(source: Path = SOURCE, output: Path = OUTPUT) -> None:
     properties.author = AUTHOR
     properties.last_modified_by = AUTHOR
     properties.comments = ""
+    properties.created = properties.modified = datetime.now(UTC).replace(tzinfo=None)
     document.save(output)
 
 

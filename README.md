@@ -38,7 +38,7 @@ the figures. Raw IEC files are not redistributed, because of the IEC's copyright
 
 | Path | Contents |
 | --- | --- |
-| `docs/PAPER.pdf` and `docs/PAPER.md` | The paper |
+| `docs/PAPER.docx`, `docs/PAPER.pdf` and `docs/PAPER.md` | The paper in Word, PDF and source form |
 | `docs/DECISIONS.md` | Every modelling judgement, and known weaknesses |
 | `docs/HAND_CHECK.md` | Worked examples of the seat rule and model |
 | `docs/FREEZE_CHECKLIST.md` | Steps to freeze the forecast |

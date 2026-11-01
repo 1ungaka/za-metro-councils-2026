@@ -25,9 +25,7 @@ dashboard:
 
 paper:
 	$(PYTHON) -m metrocouncils.paper
-
-paper:
-	$(PYTHON) -m metrocouncils.paper
+	$(PYTHON) -m metrocouncils.paper_word
 
 lint:
 	$(PYTHON) -m ruff check .
@@ -36,4 +34,4 @@ lint:
 test:
 	$(PYTHON) -m pytest
 
-all: data build backtest forecast figures dashboard test
+all: data build backtest forecast figures dashboard paper test
