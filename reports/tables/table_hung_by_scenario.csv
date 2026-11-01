@@ -1,0 +1,7 @@
+scenario,JHB,TSH,EKU,NMA,BUF
+base,1.0,1.0,1.0,0.999,0.27
+buf_borrows_all_metros,1.0,1.0,1.0,0.999,0.474
+buf_no_borrowing,1.0,1.0,1.0,0.999,0.175
+fundamentals_only,0.998,0.985,0.99,0.928,0.175
+polls_trusted_less,1.0,1.0,1.0,0.992,0.27
+polls_trusted_more,1.0,1.0,1.0,1.0,0.27
