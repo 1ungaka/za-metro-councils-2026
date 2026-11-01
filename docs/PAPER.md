@@ -275,6 +275,10 @@ ahead, while Ipsos describes the ANC as narrowly ahead.
 - The latest Social Research Foundation metro samples are unpublished, so earlier sample sizes are
   used. Ipsos sample sizes are implied by its published margins of error.
 - No adjustment is made for possible house effects.
+- A party winning more wards than its seat entitlement is not modelled. This did not occur in any
+  of the ten councils examined, but in 2021 the closest party in Johannesburg and in Ekurhuleni came
+  within 2 seats of it. Fragmentation in 2026 makes this more plausible, as a party can win many
+  wards on a low share, and it would change the seat totals in affected councils.
 - Turnout is not modelled separately, and differential turnout is absorbed into vote-share
   uncertainty.
 - Errors are treated as independent across metros, so this paper makes no joint statements across

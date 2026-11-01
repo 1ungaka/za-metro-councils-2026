@@ -22,7 +22,8 @@ Every judgement in the forecast is listed here so that it can be checked and def
 
 - Turnout. Differential turnout is absorbed in the vote-share uncertainty.
 - Overhang. A party winning more wards than its entitlement is ignored. It did not occur in any
-  of the 10 councils checked, and total seats depend only on combined votes unless it occurs.
+  of the 10 councils checked, and total seats depend only on combined votes unless it occurs. The
+  margin was only 2 seats in Johannesburg and Ekurhuleni in 2021, so this is a real risk in 2026.
 - Coalition politics. "Reaches a majority" is arithmetic, and says nothing about who would agree
   to govern together.
 
