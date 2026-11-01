@@ -1,0 +1,17 @@
+file,url,sha256,bytes,downloaded_utc
+lge2016/EC.csv,https://results.elections.org.za/home/LGEPublicReports/402/Downloadable%20Party%20Results/EC.csv,da6f4dfbfea731cedf7802932e90ac2d20dc6752c8f493e331a2df29786454f9,15224355,2026-11-01T21:52:04Z
+lge2016/GP.csv,https://results.elections.org.za/home/LGEPublicReports/402/Downloadable%20Party%20Results/GP.csv,cc8c384a45ae71e060a6cbfce79f2968047fd148b4825038e46bd06c30a92eae,13873346,2026-11-01T21:52:08Z
+lge2016/seats_BUF.xls,https://results.elections.org.za/home/LGEPublicReports/402/Seat%20Calculation%20Detail/EC/BUF.xls,f12329d3a254cd965449a8a44d2f4e5029f52fa5ef31275418206c6983fb03d3,24448,2026-11-01T21:52:09Z
+lge2016/seats_EKU.xls,https://results.elections.org.za/home/LGEPublicReports/402/Seat%20Calculation%20Detail/GP/EKU.xls,7904dd86c1f1f81e3edc69bc30f8addb0a429234e1ce0c493ad7272d29b99d6f,24448,2026-11-01T21:52:08Z
+lge2016/seats_JHB.xls,https://results.elections.org.za/home/LGEPublicReports/402/Seat%20Calculation%20Detail/GP/JHB.xls,a17cab050f68094dfbfeeae0c355a861d800152d59c0c1d5ff6c6ecda044c7da,24448,2026-11-01T21:52:08Z
+lge2016/seats_NMA.xls,https://results.elections.org.za/home/LGEPublicReports/402/Seat%20Calculation%20Detail/EC/NMA.xls,7364e8afce6ed09da7fb5eca02b399860c234b3bc0d78e94640bc621f063b88c,24448,2026-11-01T21:52:09Z
+lge2016/seats_TSH.xls,https://results.elections.org.za/home/LGEPublicReports/402/Seat%20Calculation%20Detail/GP/TSH.xls,f4b7cc3423faf59c0a0349a3d023f1e38911ad5d35b7bb283fabf4b54f4c4caf,24448,2026-11-01T21:52:08Z
+lge2021/EC.csv,https://results.elections.org.za/home/LGEPublicReports/1091/Downloadable%20Party%20Results/EC.csv,332d476288148cf063dc1b82a89042daea979518e67b15c075750adcf4a3fc7f,23266396,2026-11-01T21:52:14Z
+lge2021/GP.csv,https://results.elections.org.za/home/LGEPublicReports/1091/Downloadable%20Party%20Results/GP.csv,644fa0552e36598b84801c55c2ba8bd375628e6d75f4ab3d82dcc459e2eb8b04,27498402,2026-11-01T21:52:19Z
+lge2021/seats_BUF.xls,https://results.elections.org.za/home/LGEPublicReports/1091/Seat%20Calculation%20Detail/EC/BUF.xls,24063cbe7e2e4e6b2231615c9e74800efdd8d594d01a1e8864f05a00caae6eac,24512,2026-11-01T21:52:19Z
+lge2021/seats_EKU.xls,https://results.elections.org.za/home/LGEPublicReports/1091/Seat%20Calculation%20Detail/GP/EKU.xls,d2fc3eafc5094977296d363b955b3401f99af86dc24406407848517f933860b5,32704,2026-11-01T21:52:19Z
+lge2021/seats_JHB.xls,https://results.elections.org.za/home/LGEPublicReports/1091/Seat%20Calculation%20Detail/GP/JHB.xls,c22277bec10782c379bbc88ab6e6b1d69f8606bbc5aeda4c95168a9c9ab16cd0,40896,2026-11-01T21:52:19Z
+lge2021/seats_NMA.xls,https://results.elections.org.za/home/LGEPublicReports/1091/Seat%20Calculation%20Detail/EC/NMA.xls,40dd7477fc237f01043da54a18a446b7c853df85a11b1cf542472e4a353cc194,32704,2026-11-01T21:52:19Z
+lge2021/seats_TSH.xls,https://results.elections.org.za/home/LGEPublicReports/1091/Seat%20Calculation%20Detail/GP/TSH.xls,737c1ca6a4edf10b32339b9f67ef765eb1a1ba0bf2bda327867f5b672ba22762,32704,2026-11-01T21:52:19Z
+npe2019/National.zip,https://www.elections.org.za/content/NPEPublicReports/699/Downloadable%20Results/National.zip,8d3e8a3c408297327b375b0f5d3ae3b5ddb99b8db1d9bb10a0c4058afbb843f0,5831093,2026-11-01T21:53:19Z
+npe2024/National.zip,https://results.elections.org.za/home/NPEPublicReports/1334/National%20Ballot/Downloadable%20Results/National.zip,da7afa029ee24e2a8cf19c6611922e24f06cfedbb7258956d92eb7deb30fa577,6334891,2026-11-01T21:52:19Z
