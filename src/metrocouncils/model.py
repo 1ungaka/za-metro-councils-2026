@@ -120,7 +120,7 @@ def clean_polls(polls: pd.DataFrame) -> pd.DataFrame:
     parts = polls[["ANC", "DA", "MK", "EFF", "PA", "ASA", "FFP", "IFP", "OTHERS"]]
     listed = parts.sum(axis=1)
     complete = listed >= COMPLETE_POLL_MINIMUM - polls["DK"].fillna(0)
-    out = polls[["metro", "pollster"]].copy()
+    out = polls[["metro", "pollster", "sample"]].copy()
     other = parts["OTHERS"].fillna(0) + parts["IFP"].fillna(0)
     shares = parts.drop(columns=["IFP", "OTHERS"]).assign(OTHER=other.where(other > 0))
     base = listed.where(complete, 100)
@@ -129,17 +129,27 @@ def clean_polls(polls: pd.DataFrame) -> pd.DataFrame:
 
 
 def poll_summary(polls: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series]:
-    """Return mean log shares by metro, poll counts, and the between-pollster spread per group."""
-    groups = [group for group in GROUPS]
+    """Summarise the polls by metro, weighting each poll by its sample size.
+
+    Returns the weighted mean log shares, the effective number of polls and the
+    between-pollster spread per group. With weights w, the effective number is
+    (sum w)^2 / sum w^2, so one large poll beside a small one counts for little more than one.
+    """
+    groups = list(GROUPS)
     logs = polls.copy()
     logs[groups] = np.log(polls[groups].clip(lower=SHARE_FLOOR))
-    means = logs.groupby("metro")[groups].mean()
+    weights = logs[groups].notna().mul(polls["sample"], axis=0)
+    total = weights.groupby(logs["metro"]).sum()
+    squares = (weights**2).groupby(logs["metro"]).sum()
+    means = (logs[groups] * weights).groupby(logs["metro"]).sum() / total.replace(0, np.nan)
+    effective = (total**2 / squares.replace(0, np.nan)).fillna(0)
+
     counts = logs.groupby("metro")[groups].count()
     variance = logs.groupby("metro")[groups].var(ddof=1)
-    weights = (counts - 1).clip(lower=0)
-    pooled = (variance.fillna(0) * weights).sum() / weights.sum().replace(0, np.nan)
+    freedom = (counts - 1).clip(lower=0)
+    pooled = (variance.fillna(0) * freedom).sum() / freedom.sum().replace(0, np.nan)
     spread = np.sqrt(pooled).fillna(np.sqrt(pooled).mean())
-    return means, counts, spread
+    return means, effective, spread
 
 
 def posterior(

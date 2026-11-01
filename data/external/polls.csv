@@ -1,11 +1,11 @@
-metro,pollster,fieldwork,sample,ANC,DA,MK,EFF,PA,ASA,FFP,IFP,OTHERS,DK
-JHB,Ipsos,2026-09/10,,27,30,5,12,1,11,3,2,5,4
-JHB,Social Research Foundation,2026-09/10,,22,36,11,6,,9,,,,
-JHB,SABI Strategy Group,2026-08/09,1000,22.6,29.2,12.3,11,3.7,7,3,1.9,9.3,
-JHB,MarkData,2026-08/09,1011,21.8,35.0,12.5,11.9,3.7,10.3,0.9,0.7,3.2,
-TSH,Ipsos,2026-09/10,,31,34,2,8,,8,5,2,7,3
-TSH,Social Research Foundation,2026-09/10,,26,32,4,7,,12,7,,,
-TSH,MarkData,2026-08/09,1046,24.9,33.9,5.2,12.3,2.1,10.7,7.9,,2.6,
-TSH,SABI Strategy Group,2026-08/09,1001,23.9,32.1,5.8,13.7,1.1,10.8,4.3,,4.6,
-EKU,MarkData,2026-08/09,1019,29.4,31.2,11.5,9.2,2.5,6.1,5.2,2.8,2.2,
-NMA,MarkData,2026-08/09,994,37.4,37.7,3.2,8.0,4.0,3.4,2.3,0.7,3.2,
+metro,pollster,fieldwork,sample,sample_basis,voter_base,ANC,DA,MK,EFF,PA,ASA,FFP,IFP,OTHERS,DK,checked_against
+JHB,Ipsos,2026-09-12/10-13,277,implied by published margin of 5.89,registered,27,30,5,12,1,11,3,2,5,4,Ipsos charts PDF
+JHB,Social Research Foundation,2026-09-18/10-12,504,metro sample of previous wave,registered,22,36,11,6,,9,,,,,The Common Sense
+JHB,SABI Strategy Group,2026-08-25/09-17,1000,published,registered,22.6,29.2,12.3,11,3.7,7,3,1.9,9.3,,Decimals from Wikipedia; five parties rounded in The Common Sense
+JHB,MarkData,2026-08-10/09-12,1011,published,likely,21.8,35.0,12.5,11.9,3.7,10.3,0.9,0.7,3.2,,Five parties in Sowetan; rest from Wikipedia
+TSH,Ipsos,2026-09-12/10-13,158,implied by published margin of 7.8,registered,31,34,2,8,,8,5,2,7,3,Ipsos charts PDF
+TSH,Social Research Foundation,2026-09-18/10-12,508,metro sample of previous wave,registered,26,32,4,7,,12,7,,,,The Common Sense
+TSH,MarkData,2026-08-10/09-12,1046,published,likely,24.9,33.9,5.2,12.3,2.1,10.7,7.9,,2.6,,Five parties in The Common Sense; rest from Wikipedia
+TSH,SABI Strategy Group,2026-08-25/09-17,1001,published,registered,23.9,32.1,5.8,13.7,1.1,10.8,4.3,,4.6,,Decimals from Wikipedia; five parties rounded in The Common Sense
+EKU,MarkData,2026-08-10/09-12,1019,published,likely,29.4,31.2,11.5,9.2,2.5,6.1,5.2,2.8,2.2,,eNCA for seven parties; rest from Wikipedia
+NMA,MarkData,2026-08-10/09-12,994,published,likely,37.4,37.7,3.2,8.0,4.0,3.4,2.3,0.7,3.2,,eNCA for all parties

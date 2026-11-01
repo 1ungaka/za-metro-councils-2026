@@ -54,6 +54,7 @@ def test_clean_polls_rebases_a_complete_poll_without_dont_knows():
             {
                 "metro": "A",
                 "pollster": "X",
+                "sample": 1000,
                 "ANC": 40,
                 "DA": 30,
                 "MK": 5,
@@ -78,6 +79,7 @@ def test_clean_polls_leaves_a_partial_poll_as_published():
             {
                 "metro": "A",
                 "pollster": "X",
+                "sample": 1000,
                 "ANC": 22,
                 "DA": 36,
                 "MK": 11,
@@ -140,3 +142,27 @@ def test_draws_stay_on_the_simplex():
     shares = model.draw_shares(mean, scale, 1000, np.random.default_rng(3))
     assert (shares > 0).all()
     assert shares.sum(axis=1) == pytest.approx(np.ones(1000))
+
+
+def test_poll_summary_weights_polls_by_sample_size():
+    rows = [
+        {"metro": "A", "pollster": "X", "sample": 3000, **dict.fromkeys(model.GROUPS, 0.1)},
+        {"metro": "A", "pollster": "Y", "sample": 1000, **dict.fromkeys(model.GROUPS, 0.2)},
+    ]
+    means, effective, _ = model.poll_summary(pd.DataFrame(rows))
+    # Weights of 3/4 and 1/4 on the two logs.
+    assert means.loc["A", "ANC"] == pytest.approx(0.75 * np.log(0.1) + 0.25 * np.log(0.2))
+    # (3000 + 1000)^2 / (3000^2 + 1000^2) = 1.6.
+    assert effective.loc["A", "ANC"] == pytest.approx(1.6)
+
+
+def test_poll_summary_ignores_a_group_a_poll_did_not_report():
+    first = dict.fromkeys(model.GROUPS, 0.1)
+    second = dict.fromkeys(model.GROUPS, 0.2) | {"PA": np.nan}
+    rows = [
+        {"metro": "A", "pollster": "X", "sample": 1000, **first},
+        {"metro": "A", "pollster": "Y", "sample": 1000, **second},
+    ]
+    means, effective, _ = model.poll_summary(pd.DataFrame(rows))
+    assert means.loc["A", "PA"] == pytest.approx(np.log(0.1))
+    assert effective.loc["A", "PA"] == pytest.approx(1.0)
