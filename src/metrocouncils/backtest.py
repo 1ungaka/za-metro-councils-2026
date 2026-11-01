@@ -37,7 +37,8 @@ def run() -> dict:
     )
     scales = model.prior_scales(errors)
 
-    by_metro = (predicted - actual).abs().mean(axis=1) * 100
+    present = (predicted.sum() > 0) | (actual.sum() > 0)
+    by_metro = (predicted - actual).loc[:, present].abs().mean(axis=1) * 100
     results = {
         "weight": weight,
         "mae_blend": model.share_mae(predicted, actual),

@@ -1,6 +1,6 @@
 PYTHON ?= python
 
-.PHONY: setup data build backtest forecast figures lint test all
+.PHONY: setup data build backtest forecast figures dashboard lint test all
 
 setup:
 	$(PYTHON) -m pip install -e ".[dev]"
@@ -20,6 +20,9 @@ forecast:
 figures:
 	$(PYTHON) -m metrocouncils.figures
 
+dashboard:
+	$(PYTHON) -m metrocouncils.dashboard
+
 lint:
 	$(PYTHON) -m ruff check .
 	$(PYTHON) -m ruff format --check .
@@ -27,4 +30,4 @@ lint:
 test:
 	$(PYTHON) -m pytest
 
-all: data build backtest forecast figures test
+all: data build backtest forecast figures dashboard test

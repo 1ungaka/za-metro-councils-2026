@@ -1,0 +1,16 @@
+kind,label,mae
+method,Blend of local and national results,3.48
+method,National result only,4.09
+method,Last local result only,4.11
+metro,Johannesburg,6.54
+metro,Tshwane,4.15
+metro,Ekurhuleni,3.96
+metro,Nelson Mandela Bay,1.93
+metro,Buffalo City,0.82
+party,ANC,9.58
+party,DA,1.96
+party,EFF,1.57
+party,PA,1.32
+party,ActionSA,6.3
+party,FF+,1.02
+party,Others,2.63

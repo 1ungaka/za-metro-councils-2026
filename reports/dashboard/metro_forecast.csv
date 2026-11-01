@@ -1,0 +1,6 @@
+metro,seats,majority_needed,p_no_majority,p_anc_largest,p_da_largest,p_tied,no_majority_label,anc_largest_label,da_largest_label,tied_label
+Johannesburg,270,136,1.0,0.042,0.9491,0.0089,>99%,4%,95%,1%
+Tshwane,214,108,1.0,0.0887,0.8933,0.018,>99%,9%,89%,2%
+Ekurhuleni,224,113,1.0,0.5484,0.415,0.0343,>99%,55%,42%,3%
+Nelson Mandela Bay,120,61,0.9994,0.4846,0.4632,0.0522,>99%,48%,46%,5%
+Buffalo City,100,51,0.2695,0.9994,0.0005,0.0001,27%,>99%,0%,0%
