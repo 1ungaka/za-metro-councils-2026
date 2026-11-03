@@ -327,7 +327,25 @@ def build(source: Path = SOURCE, output: Path = OUTPUT) -> None:
     properties.last_modified_by = AUTHOR
     properties.comments = ""
     properties.created = properties.modified = datetime.now(UTC).replace(tzinfo=None)
+    set_compatibility_mode(document)
     document.save(output)
+
+
+def set_compatibility_mode(document, mode: int = 15) -> None:
+    """Mark the file as current Word format so it does not open in Compatibility Mode."""
+    settings = document.settings.element
+    compat = settings.find(qn("w:compat"))
+    if compat is None:
+        compat = OxmlElement("w:compat")
+        settings.append(compat)
+    for setting in compat.findall(qn("w:compatSetting")):
+        if setting.get(qn("w:name")) == "compatibilityMode":
+            compat.remove(setting)
+    setting = OxmlElement("w:compatSetting")
+    setting.set(qn("w:name"), "compatibilityMode")
+    setting.set(qn("w:uri"), "http://schemas.microsoft.com/office/word")
+    setting.set(qn("w:val"), str(mode))
+    compat.append(setting)
 
 
 if __name__ == "__main__":

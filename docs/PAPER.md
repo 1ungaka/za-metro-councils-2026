@@ -2,8 +2,8 @@
 
 Lunga Ngaka, University of Fort Hare
 
-**Working paper, 2 November 2026. Forecast figures are provisional until the forecast is frozen
-before polls open on 4 November 2026.**
+**Forecast frozen on 3 November 2026, before polls opened on 4 November 2026. The figures in this
+paper will not be revised after the results are declared.**
 
 ## Abstract
 
@@ -300,7 +300,8 @@ Any change of method after the forecast is frozen will be reported as a departur
 
 ## Data and code
 
-Code and processed data are available at [repository link, to add at freeze]. Raw IEC files are not
+Code and processed data are available at <https://github.com/1ungaka/za-metro-councils-2026>, tag
+`v1.0-forecast`, which marks the frozen forecast. Raw IEC files are not
 redistributed and can be downloaded with the provided script.
 
 ## Acknowledgements

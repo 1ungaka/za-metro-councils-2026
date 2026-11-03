@@ -43,3 +43,14 @@ Every judgement in the forecast is listed here so that it can be checked and def
   sizes are used. Some smaller-party figures rest on Wikipedia alone, as noted in `polls.csv`.
 - Pollsters may have a house lean. Critics say the Social Research Foundation and SABI lean to the
   DA, and this was not adjusted for, though the between-pollster spread widens the uncertainty.
+
+## Freeze, 3 November 2026
+
+- Polls were checked again on 3 November. No new metro poll with published figures appeared after
+  the ten in `data/external/polls.csv`. Ipsos's release of 30 October gives figures only for
+  Johannesburg, Tshwane, eThekwini and Cape Town, and the first two were already included. Its
+  remarks on Ekurhuleni, Nelson Mandela Bay and Buffalo City are text only and stay out of the model.
+- The rerun reproduced the forecast of 2 November exactly. The method, weight (0.45), common poll
+  error (0.10), seed (20261104) and the borrowing rule for Buffalo City are unchanged.
+- The forecast stays at five metros. Cape Town, eThekwini and Mangaung are not added at the freeze.
+- Tag `v1.0-forecast` marks the frozen forecast. Later changes go in new files.
